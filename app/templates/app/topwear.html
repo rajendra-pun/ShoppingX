@@ -1,0 +1,35 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Top Wear{% endblock title %}
+
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="list-group">
+                <a href="{% url 'topwear' %}" class="list-group-item list-group-item-action" aria-current="true">All Top
+                    Wears</a>
+                <a href="{% url 'topwearsingle' 'Park' %}" class="list-group-item list-group-item-action" aria-current="true">Park</a>
+                <a href="{% url 'topwearsingle' 'Polo'%}" class="list-group-item list-group-item-action" aria-current="true">Polo</a>
+            </div>
+        </div>
+        <div class="col-sm-8 offset-sm-1">
+            <div class="row">
+                
+                {% for product in tshirt %}
+                <div class="col-sm-4 text-center mb-4">
+                    <a href="{% url 'product-detail' product.id %}" class="btn">
+                        <div class="item">
+                            <img class="img-thumbnail" src="{{product.product_image.url}}" height="300" alt="">
+                            <div class="fw-bold"> {{ product.title}} </div>
+                            <div class="fw-bold">Rs. {{ product.discounted_price}} <small class="fw-light text-decoration-line-through"> {{ tproduct.selling_price}} </small> </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+                    
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock main-content %}
