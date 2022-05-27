@@ -1,1 +1,1 @@
-web: gunicorn shoppinglyx.wsgi --log-file
+web: waitress-serve --port=$PORT shoppinglyx.wsgi:application

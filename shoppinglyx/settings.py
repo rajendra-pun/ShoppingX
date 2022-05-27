@@ -21,13 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-m--gd18%kgdd85p1&yct$yx7vt8^!q77lpqv2y7omx-vn2ji=8'
+# SECRET_KEY = 'django-insecure-m--gd18%kgdd85p1&yct$yx7vt8^!q77lpqv2y7omx-vn2ji=8'
+SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# ALLOWED_HOSTS = ['onshoppingx.herokuapp.com']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["onshoppinglyx.herokuapp.com", "localhost"]
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
