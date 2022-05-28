@@ -26,10 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-m--gd18%kgdd85p1&yct$yx7vt8^!q77lpqv2y7omx-vn2ji=8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["onshoppinglyx.herokuapp.com", "localhost"]
+# ALLOWED_HOSTS = ["onshoppinglyx.herokuapp.com", "localhost"]
 # ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
+
 
 
 # Application definition
